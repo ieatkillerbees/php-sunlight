@@ -17,7 +17,7 @@ namespace Sunlight\Congress;
 
 use Sunlight\Congress\Api\ApiWrapper;
 
-class Districts extends ApiWrapper
+class Bills extends ApiWrapper
 {
     protected $url = "http://congress.api.sunlightfoundation.com/bills";
 
