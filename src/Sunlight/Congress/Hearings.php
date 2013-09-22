@@ -1,10 +1,10 @@
 <?php
 /**
- * Nominations.php - Congress API Wrapper
+ * Hearings.php - Congress API Wrapper
  *
  * The API Wrapper provides an interface to construct Sunlight Foundation Congress API queries.
  *
- * @link           http://sunlightlabs.github.io/congress/nominations.html
+ * @link           http://sunlightlabs.github.io/congress/hearings.html
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
@@ -19,7 +19,7 @@ namespace Sunlight\Congress;
 use Sunlight\Congress\Api\ApiWrapper;
 
 /**
- * @link    http://sunlightlabs.github.io/congress/nominations.html
+ * @link    http://sunlightlabs.github.io/congress/hearings.html
  * @author  Samantha Quinones <samantha@tembies.com>
  * @package Sunlight\Congress
  */
@@ -28,5 +28,5 @@ class Nominations extends ApiWrapper
     /**
      * @var string
      */
-    protected $url = "http://congress.api.sunlightfoundation.com/nominations";
+    protected $url = "http://congress.api.sunlightfoundation.com/hearings";
 }
