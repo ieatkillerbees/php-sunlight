@@ -23,7 +23,7 @@ use Sunlight\Congress\Api\ApiWrapper;
  * @author  Samantha Quinones <samantha@tembies.com>
  * @package Sunlight\Congress
  */
-class Nominations extends ApiWrapper
+class UpcomingBills extends ApiWrapper
 {
     /**
      * @var string
