@@ -1,4 +1,11 @@
-<phpunit bootstrap="vendor/autoload.php">
+<phpunit bootstrap="vendor/autoload.php"
+         backupGlobals="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="false"
+         mapTestClassNameToCoveredClassName="false"
+         testdox="true">
 
     <logging>
         <log type="coverage-html"
@@ -7,17 +14,19 @@
              highlight="false"
              lowUpperBound="35"
              highLowerBound="70" />
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="false" />
     </logging>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src/</directory>
+            <directory>src/</directory>
         </whitelist>
+        <blacklist>
+            <directory>vendor/</directory>
+        </blacklist>
     </filter>
-    <testsuite>
-        <unit>
-            <directory>
-                tests/unit
-            </directory>
-        </unit>
-    </testsuite>
+    <testsuites>
+        <testsuite name="unit">
+            <directory>tests/unit/Sunlight</directory>
+        </testsuite>
+    </testsuites>
 </phpunit>
