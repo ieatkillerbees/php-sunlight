@@ -67,7 +67,7 @@ class ApiWrapperTest extends \PHPUnit_Framework_TestCase
         $wrapper->setUrl("http://foo");
 
         $respJson = json_encode(array(
-                                     'results' => [],
+                                     'results' => array(),
                                      'count'   => 0
                                 ));
 
