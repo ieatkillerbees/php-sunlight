@@ -5,7 +5,8 @@
          convertWarningsToExceptions="true"
          forceCoversAnnotation="false"
          mapTestClassNameToCoveredClassName="false"
-         testdox="true">
+         testdox="true"
+         colors="true">
 
     <logging>
         <log type="coverage-html"
@@ -16,6 +17,9 @@
              highLowerBound="70" />
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="false" />
     </logging>
+    <listeners>
+        <listener class="\Mockery\Adapter\Phpunit\TestListener"></listener>
+    </listeners>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory>src/</directory>

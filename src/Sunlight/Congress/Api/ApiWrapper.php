@@ -1,6 +1,6 @@
 <?php
 /**
- * ApiWrapper.php - Congress API Wrapper
+ * ApiWrapperTest.php - Congress API Wrapper
  *
  * The API Wrapper provides an interface to construct Sunlight Foundation Congress API queries.
  *
@@ -149,7 +149,7 @@ class ApiWrapper
         } elseif (is_array($filter)) {
             $this->_filter = new Filter($filter);
         } else {
-            throw new \BadMethodCallException(sprintf("%s::filter - first argument must be array or instance of %s", get_class($this), __NAMESPACE__ . "\\Sort"));
+            throw new \BadMethodCallException(sprintf("%s::filter - first argument must be array or instance of %s", get_class($this), __NAMESPACE__ . "\\Filter"));
         }
     }
 

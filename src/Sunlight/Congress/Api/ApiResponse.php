@@ -77,6 +77,38 @@ class ApiResponse implements \Iterator
     private $_perPage;
 
     /**
+     * @param \Guzzle\Http\Message\RequestInterface $request
+     */
+    public function setRequest($request)
+    {
+        $this->request = $request;
+    }
+
+    /**
+     * @return \Guzzle\Http\Message\RequestInterface
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * @param array $response
+     */
+    public function setResponse($response)
+    {
+        $this->response = $response;
+    }
+
+    /**
+     * @return array
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    /**
      * Takes a Guzzle RequestInterface and executes it, initializing the Response object based on the response.
      *
      * @param RequestInterface $request
