@@ -8,12 +8,12 @@
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
- * @copyright      2013 Samantha Quinones
+ * @copyright      2013 Samantha Quiñones
  * @license        MIT (For the full copyright and license information, please view the LICENSE
  *                 file that was distributed with this source code.)
  */
 
-namespace Sunlight\Congress\Containers;
+namespace Squinones\Sunlight\Congress\Containers;
 
 
 /**
@@ -24,7 +24,7 @@ namespace Sunlight\Congress\Containers;
 class Sort
 {
     /**
-     * Takes and stores a hash of fieldname => sort direction
+     * Takes and stores a hash of field name => sort direction
      *
      * @param array $params
      */

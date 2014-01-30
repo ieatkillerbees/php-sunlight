@@ -7,15 +7,13 @@
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
- * @copyright      2013 Samantha Quinones
+ * @copyright      2013 Samantha Quiñones
  * @license        MIT (For the full copyright and license information, please view the LICENSE
  *                 file that was distributed with this source code.)
  */
-namespace Sunlight\Congress\Api;
+namespace Squinones\Sunlight\Congress\Api;
 
 use Guzzle\Http\Message\RequestInterface;
-use Guzzle\Http\Message\Response;
-use Guzzle\Service\Client;
 
 /**
  * Iterable result set.
@@ -45,36 +43,36 @@ class ApiResponse implements \Iterator
      *
      * @var int
      */
-    private $_count;
+    private $count;
 
     /**
-     * The current position in the resultset. If null, the resultset is empty or the pointer has moved past the last
+     * The current position in the result set. If null, the result set is empty or the pointer has moved past the last
      * result.
      *
      * @var int|null
      */
-    private $_current;
+    private $current;
 
     /**
      * The most recent "page" of data that was returned.
      *
      * @var int
      */
-    private $_page;
+    private $page;
 
     /**
      * The total number of pages that exist for the query.
      *
      * @var int
      */
-    private $_pages;
+    private $pages;
 
     /**
      * The number of items that constitute a "page" of data
      *
      * @var int
      */
-    private $_perPage;
+    private $perPage;
 
     /**
      * @param \Guzzle\Http\Message\RequestInterface $request
@@ -116,21 +114,21 @@ class ApiResponse implements \Iterator
     public function __construct(RequestInterface $request)
     {
         // Store the request
-        $this->request = $request;
+        $this->setRequest($request);
 
         // Execute the query
-        $this->response = $this->request->send()->json();
+        $this->setResponse($this->request->send()->json());
 
         // Store the results
         $this->results = $this->response["results"];
         unset($this->response["results"]);
 
         // Record the information needed by the iterator
-        $this->_count   = $this->response["count"];
-        $this->_current = (count($this->results) > 0) ? 0 : null;
-        $this->_page    = isset($this->response["page"]) ? $this->response["page"]["page"] : 0;
-        $this->_pages   = isset($this->response["page"]["count"]) ? $this->response["page"]["count"] : 0;
-        $this->_perPage = isset($this->response["page"]["per_page"]) ? $this->response["page"]["per_page"] : 0;
+        $this->count   = $this->response["count"];
+        $this->current = (count($this->results) > 0) ? 0 : null;
+        $this->page    = isset($this->response["page"]) ? $this->response["page"]["page"] : 0;
+        $this->pages   = isset($this->response["page"]["count"]) ? $this->response["page"]["count"] : 0;
+        $this->perPage = isset($this->response["page"]["per_page"]) ? $this->response["page"]["per_page"] : 0;
     }
 
     /**
@@ -140,7 +138,7 @@ class ApiResponse implements \Iterator
      */
     public function count()
     {
-        return $this->_count;
+        return $this->count;
     }
 
     /**
@@ -151,8 +149,8 @@ class ApiResponse implements \Iterator
      */
     public function current()
     {
-        if (!is_null($this->_current) && isset($this->results[$this->_current])) {
-            return $this->results[$this->_current];
+        if (!is_null($this->current) && isset($this->results[$this->current])) {
+            return $this->results[$this->current];
         } else {
             return null;
         }
@@ -167,21 +165,21 @@ class ApiResponse implements \Iterator
     public function next()
     {
         // If the current element is the last element, return null
-        if ($this->_current === ($this->count() - 1)) {
-            $this->_current = null;
+        if ($this->current === ($this->count() - 1)) {
+            $this->current = null;
 
             return;
         }
 
         // If the next element is greater than the result count, and this is the last page, return null
-        if (($this->_current + 1) > count($this->results) && (($this->_page + 1) > $this->_pages)) {
-            $this->_current = null;
+        if (($this->current + 1) > count($this->results) && (($this->page + 1) > $this->pages)) {
+            $this->current = null;
 
             return;
         }
 
         // Advance to the next page
-        $this->request->getQuery()->set("page", ++$this->_page);
+        $this->request->getQuery()->set("page", ++$this->page);
 
         // Retrieve the next page
         $response = $this->request->send()->json();
@@ -190,7 +188,7 @@ class ApiResponse implements \Iterator
         $this->results = array_merge($this->results, $response["results"]);
 
         // Advance to the next element
-        $this->_current++;
+        $this->current++;
 
         return;
     }
@@ -204,7 +202,7 @@ class ApiResponse implements \Iterator
      */
     public function key()
     {
-        return $this->_current;
+        return $this->current;
     }
 
     /**
@@ -217,7 +215,7 @@ class ApiResponse implements \Iterator
      */
     public function valid()
     {
-        if (is_null($this->_current)) {
+        if (is_null($this->current)) {
             return false;
         }
 
@@ -233,6 +231,6 @@ class ApiResponse implements \Iterator
      */
     public function rewind()
     {
-        $this->_current = 0;
+        $this->current = 0;
     }
 }

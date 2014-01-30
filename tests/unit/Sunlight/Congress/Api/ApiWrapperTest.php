@@ -7,14 +7,13 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace Sunlight\Congress\Tests;
+namespace Squinones\Sunlight\Congress\Tests;
 
-use Guzzle\Http\Message\Request;
 use Guzzle\Http\Message\Response;
-use Sunlight\Congress\Api\ApiWrapper;
-use Sunlight\Congress\Containers\FieldList;
-use Sunlight\Congress\Containers\Filter;
-use Sunlight\Congress\Containers\Sort;
+use Squinones\Sunlight\Congress\Api\ApiWrapper;
+use Squinones\Sunlight\Congress\Containers\FieldList;
+use Squinones\Sunlight\Congress\Containers\Filter;
+use Squinones\Sunlight\Congress\Containers\Sort;
 
 class ApiWrapperTest extends \PHPUnit_Framework_TestCase
 {
@@ -80,7 +79,7 @@ class ApiWrapperTest extends \PHPUnit_Framework_TestCase
         $client->shouldReceive('get')->withNoArgs()->andReturn($request);
 
         $wrapper->setClient($client);
-        $this->assertInstanceOf('Sunlight\Congress\Api\ApiResponse', $wrapper->find());
+        $this->assertInstanceOf('Squinones\Sunlight\Congress\Api\ApiResponse', $wrapper->find());
 
     }
 
@@ -139,7 +138,7 @@ class ApiWrapperTest extends \PHPUnit_Framework_TestCase
     public function testSettingFieldsFromInvalidInput($fields)
     {
         $wrapper = new ApiWrapper();
-        $this->setExpectedException("BadMethodCallException", 'Sunlight\Congress\Api\ApiWrapper::fields - first argument must be array or instance of Sunlight\Congress\Api\FieldSet');
+        $this->setExpectedException("BadMethodCallException", 'Squinones\Sunlight\Congress\Api\ApiWrapper::fields - first argument must be array or instance of Squinones\Sunlight\Congress\Api\FieldSet');
         $wrapper->fields($fields);
     }
 
@@ -150,7 +149,7 @@ class ApiWrapperTest extends \PHPUnit_Framework_TestCase
     public function testSettingSortFromInvalidInput($fields)
     {
         $wrapper = new ApiWrapper();
-        $this->setExpectedException("BadMethodCallException", 'Sunlight\Congress\Api\ApiWrapper::sort - first argument must be array or instance of Sunlight\Congress\Api\Sort');
+        $this->setExpectedException("BadMethodCallException", 'Squinones\Sunlight\Congress\Api\ApiWrapper::sort - first argument must be array or instance of Squinones\Sunlight\Congress\Api\Sort');
         $wrapper->sort($fields);
     }
 
@@ -161,7 +160,7 @@ class ApiWrapperTest extends \PHPUnit_Framework_TestCase
     public function testSettingFilterFromInvalidInput($fields)
     {
         $wrapper = new ApiWrapper();
-        $this->setExpectedException("BadMethodCallException", 'Sunlight\Congress\Api\ApiWrapper::filter - first argument must be array or instance of Sunlight\Congress\Api\Filter');
+        $this->setExpectedException("BadMethodCallException", 'Squinones\Sunlight\Congress\Api\ApiWrapper::filter - first argument must be array or instance of Squinones\Sunlight\Congress\Api\Filter');
         $wrapper->filter($fields);
     }
 
@@ -175,5 +174,4 @@ class ApiWrapperTest extends \PHPUnit_Framework_TestCase
             array("true"),                      // boolean
         );
     }
-
 }

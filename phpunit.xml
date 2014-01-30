@@ -10,7 +10,7 @@
 
     <logging>
         <log type="coverage-html"
-             target="tests/unit/coverage"
+             target="tests/coverage"
              charset="UTF-8"
              highlight="false"
              lowUpperBound="35"

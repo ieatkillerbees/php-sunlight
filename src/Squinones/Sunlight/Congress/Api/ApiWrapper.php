@@ -6,18 +6,17 @@
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
- * @copyright      2013 Samantha Quinones
+ * @copyright      2013 Samantha Quiñones
  * @license        MIT (For the full copyright and license information, please view the LICENSE
  *                 file that was distributed with this source code.)
  */
 
-namespace Sunlight\Congress\Api;
+namespace Squinones\Sunlight\Congress\Api;
 
 use Guzzle\Http\Client;
-use Sunlight\Congress\Api\ApiResponse;
-use Sunlight\Congress\Containers\FieldList;
-use Sunlight\Congress\Containers\Filter;
-use Sunlight\Congress\Containers\Sort;
+use Squinones\Sunlight\Congress\Containers\FieldList;
+use Squinones\Sunlight\Congress\Containers\Filter;
+use Squinones\Sunlight\Congress\Containers\Sort;
 
 /**
  * Abstraction for the Sunlight Foundation's Congress REST API
@@ -54,22 +53,23 @@ class ApiWrapper
      *
      * @var FieldList
      */
-    private $_fields;
+    private $fields;
 
     /**
      * A Sunlight\Congress\Sort object that will contain a list of fields and sort directions.
      *
      * @var Sort
      */
-    private $_sort;
+    private $sort;
 
     /**
      * A Sunlight\Congress\Filter object containing key=>value pairs of fields and values/expressions on which to
-     * filter. For more information, see the Sunlight Foundation API documentation here: {@link http://sunlightlabs.github.io/congress/index.html}
+     * filter. For more information, see the Sunlight Foundation API documentation here:
+     * {@link http://sunlightlabs.github.io/congress/index.html}
      *
      * @var Filter
      */
-    private $_filter;
+    private $filter;
 
     /**
      * Takes an optional API key argument.
@@ -87,7 +87,8 @@ class ApiWrapper
 
     /**
      * Returns an ApiResponse object. The optional 'query' parameter can contain plain text that will be used as a
-     * search query as documented here: {@link http://sunlightlabs.github.io/congress/index.html#parameters/basic-search}
+     * search query as documented here:
+     * {@link http://sunlightlabs.github.io/congress/index.html#parameters/basic-search}
      *
      * @param null|string $query
      *
@@ -121,11 +122,17 @@ class ApiWrapper
     public function setFields($fields)
     {
         if ($fields instanceof FieldList) {
-            $this->_fields = $fields;
+            $this->fields = $fields;
         } elseif (is_array($fields)) {
-            $this->_fields = new FieldList($fields);
+            $this->fields = new FieldList($fields);
         } else {
-            throw new \BadMethodCallException(sprintf("%s::fields - first argument must be array or instance of %s", get_class($this), __NAMESPACE__ . "\\FieldSet"));
+            throw new \BadMethodCallException(
+                sprintf(
+                    "%s::fields - first argument must be array or instance of %s",
+                    get_class($this),
+                    __NAMESPACE__ . "\\FieldSet"
+                )
+            );
         }
     }
 
@@ -134,7 +141,7 @@ class ApiWrapper
      */
     public function getFields()
     {
-        return $this->_fields;
+        return $this->fields;
     }
 
     /**
@@ -145,11 +152,17 @@ class ApiWrapper
     public function setFilter($filter)
     {
         if ($filter instanceof Filter) {
-            $this->_filter = $filter;
+            $this->filter = $filter;
         } elseif (is_array($filter)) {
-            $this->_filter = new Filter($filter);
+            $this->filter = new Filter($filter);
         } else {
-            throw new \BadMethodCallException(sprintf("%s::filter - first argument must be array or instance of %s", get_class($this), __NAMESPACE__ . "\\Filter"));
+            throw new \BadMethodCallException(
+                sprintf(
+                    "%s::filter - first argument must be array or instance of %s",
+                    get_class($this),
+                    __NAMESPACE__ . "\\Filter"
+                )
+            );
         }
     }
 
@@ -158,7 +171,7 @@ class ApiWrapper
      */
     public function getFilter()
     {
-        return $this->_filter;
+        return $this->filter;
     }
 
     /**
@@ -169,11 +182,17 @@ class ApiWrapper
     public function setSort($sort)
     {
         if ($sort instanceof Sort) {
-            $this->_sort = $sort;
+            $this->sort = $sort;
         } elseif (is_array($sort)) {
-            $this->_sort = new Sort($sort);
+            $this->sort = new Sort($sort);
         } else {
-            throw new \BadMethodCallException(sprintf("%s::sort - first argument must be array or instance of %s", get_class($this), __NAMESPACE__ . "\\Sort"));
+            throw new \BadMethodCallException(
+                sprintf(
+                    "%s::sort - first argument must be array or instance of %s",
+                    get_class($this),
+                    __NAMESPACE__ . "\\Sort"
+                )
+            );
         }
     }
 
@@ -182,7 +201,7 @@ class ApiWrapper
      */
     public function getSort()
     {
-        return $this->_sort;
+        return $this->sort;
     }
 
     /**
@@ -272,9 +291,11 @@ class ApiWrapper
             if (getenv('SUNLIGHT_API_KEY')) {
                 $this->apiKey = getenv('SUNLIGHT_API_KEY');
             } else {
-                throw new \RuntimeException("You must set a valid API key as the first parameter to the constructor, " .
-                                            "by calling " . get_class($this) . "::setApiKey, " .
-                                            "or in the environment variable 'SUNLIGHT_API_KEY'");
+                throw new \RuntimeException(
+                    "You must set a valid API key as the first parameter to the constructor, " .
+                    "by calling " . get_class($this) . "::setApiKey, " .
+                    "or in the environment variable 'SUNLIGHT_API_KEY'"
+                );
             }
         }
 

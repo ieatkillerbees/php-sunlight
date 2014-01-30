@@ -7,10 +7,10 @@
  * To change this template use File | Settings | File Templates.
  */
 
-namespace Sunlight\Congress\Tests;
+namespace Squinones\Sunlight\Congress\Tests;
 
 
-use Sunlight\Congress\Containers\FieldList;
+use Squinones\Sunlight\Congress\Containers\FieldList;
 
 class FieldListTest extends \PHPUnit_Framework_TestCase
 {

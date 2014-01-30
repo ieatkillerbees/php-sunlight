@@ -8,16 +8,16 @@
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
- * @copyright      2013 Samantha Quinones
+ * @copyright      2013 Samantha Quiñones
  * @license        MIT (For the full copyright and license information, please view the LICENSE
  *                 file that was distributed with this source code.)
  */
 
-namespace Sunlight\Congress;
+namespace Squinones\Sunlight\Congress;
 
 
-use Sunlight\Congress\Api\ApiWrapper;
-use Sunlight\Congress\Containers\Filter;
+use Squinones\Sunlight\Congress\Api\ApiWrapper;
+use Squinones\Sunlight\Congress\Containers\Filter;
 
 /**
  * @link    http://sunlightlabs.github.io/congress/legislators.html

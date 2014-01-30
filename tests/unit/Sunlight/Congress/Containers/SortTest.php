@@ -20,7 +20,7 @@ class SortTest extends PHPUnit_Framework_TestCase
         if ($expected instanceof InvalidArgumentException) {
             $this->setExpectedException("InvalidArgumentException");
         }
-        $sort = new \Sunlight\Congress\Containers\Sort($sortParams[1]);
+        $sort = new Squinones\Sunlight\Congress\Containers\Sort($sortParams[1]);
         $this->assertEquals($expected, (string) $sort);
     }
 
