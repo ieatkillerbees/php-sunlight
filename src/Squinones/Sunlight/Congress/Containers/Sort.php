@@ -4,7 +4,7 @@
  *
  * Sort represents the ordering criteria.
  *
- * @link           http://sunlightlabs.github.io/congress/index.html#parameters/sorting
+ * @link           https://sunlightlabs.github.io/congress/index.html#parameters/sorting
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress

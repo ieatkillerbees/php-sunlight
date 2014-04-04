@@ -4,7 +4,7 @@
  *
  * The API Wrapper provides an interface to construct Sunlight Foundation Congress API queries.
  *
- * @link           http://sunlightlabs.github.io/congress/amendments.html
+ * @link           https://sunlightlabs.github.io/congress/amendments.html
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
@@ -19,7 +19,7 @@ namespace Squinones\Sunlight\Congress;
 use Squinones\Sunlight\Congress\Api\ApiWrapper;
 
 /**
- * @link    http://sunlightlabs.github.io/congress/committees.html
+ * @link    https://sunlightlabs.github.io/congress/committees.html
  * @author  Samantha Quinones <samantha@tembies.com>
  * @package Sunlight\Congress
  */
@@ -28,5 +28,5 @@ class Amendments extends ApiWrapper
     /**
      * @var string
      */
-    protected $url = "http://sunlightlabs.github.io/congress/amendments.html";
+    protected $url = "https://sunlightlabs.github.io/congress/amendments.html";
 }

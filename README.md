@@ -9,7 +9,7 @@ The primary goal is to provide a simple and minimalistic interface to the APIs v
 Congress API
 ------------
 
-[Committees](http://sunlightlabs.github.io/congress/committees.html)
+[Committees](https://sunlightlabs.github.io/congress/committees.html)
 ```php
 $committees = new Committees("<sunlight api key");
 
@@ -24,7 +24,7 @@ $filter = [
 $results = $committees->find($filter);
 ```
 
-[Congressional Districts](http://sunlightlabs.github.io/congress/districts.html)
+[Congressional Districts](https://sunlightlabs.github.io/congress/districts.html)
 ```php
 $districts = new Districts("<sunlight api key>");
 
@@ -32,7 +32,7 @@ $results = $districts->locate(<zipcode>);
 $results = $districts->locate([<longitude>, <latitude>]);
 ```
 
-[Members](http://sunlightlabs.github.io/congress/legislators.html)
+[Members](https://sunlightlabs.github.io/congress/legislators.html)
 ```php
 $legislators = new Legislators("<sunlight api key>");
 

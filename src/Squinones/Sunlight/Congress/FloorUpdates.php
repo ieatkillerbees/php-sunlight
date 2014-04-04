@@ -4,7 +4,7 @@
  *
  * The API Wrapper provides an interface to construct Sunlight Foundation Congress API queries.
  *
- * @link           http://sunlightlabs.github.io/congress/floor_updates.html
+ * @link           https://sunlightlabs.github.io/congress/floor_updates.html
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
@@ -19,5 +19,5 @@ use Squinones\Sunlight\Congress\Api\ApiWrapper;
 
 class FloorUpdates extends ApiWrapper
 {
-    protected $url = "http://congress.api.sunlightfoundation.com/floor_updates";
+    protected $url = "https://congress.api.sunlightfoundation.com/floor_updates";
 }
