@@ -4,7 +4,7 @@
  *
  * The API Wrapper provides an interface to construct Sunlight Foundation Congress API queries.
  *
- * @link           http://sunlightlabs.github.io/congress/districts.html
+ * @link           https://sunlightlabs.github.io/congress/districts.html
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
@@ -20,12 +20,12 @@ use Squinones\Sunlight\Congress\Containers\Filter;
 
 class Districts extends ApiWrapper
 {
-    protected $url = "http://congress.api.sunlightfoundation.com/districts/locate";
+    protected $url = "https://congress.api.sunlightfoundation.com/districts/locate";
 
     /**
      * Query the /locate subordinate endpoint
      *
-     * @link http://sunlightlabs.github.io/congress/districts.html
+     * @link https://sunlightlabs.github.io/congress/districts.html
      *
      * @param $location
      *

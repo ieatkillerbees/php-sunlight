@@ -4,7 +4,7 @@
  *
  * The API Wrapper provides an interface to construct Sunlight Foundation Congress API queries.
  *
- * @link           http://sunlightlabs.github.io/congress/committees.html
+ * @link           https://sunlightlabs.github.io/congress/committees.html
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress
@@ -20,7 +20,7 @@ use Squinones\Sunlight\Congress\Api\ApiWrapper;
 use Squinones\Sunlight\Congress\Containers\Filter;
 
 /**
- * @link    http://sunlightlabs.github.io/congress/legislators.html
+ * @link    https://sunlightlabs.github.io/congress/legislators.html
  * @author  Samantha Quinones <samantha@tembies.com>
  * @package Sunlight\Congress
  */
@@ -29,12 +29,12 @@ class Legislators extends ApiWrapper
     /**
      * @var string
      */
-    protected $url = "http://congress.api.sunlightfoundation.com/legislators";
+    protected $url = "https://congress.api.sunlightfoundation.com/legislators";
 
     /**
      * Query the /locate subordinate endpoint
      *
-     * @link http://sunlightlabs.github.io/congress/legislators.html#methods/legislators-locate
+     * @link https://sunlightlabs.github.io/congress/legislators.html#methods/legislators-locate
      *
      * @param $location
      *

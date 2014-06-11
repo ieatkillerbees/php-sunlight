@@ -4,7 +4,7 @@
  *
  * Hash of fields and values or expressions to use as a filter.
  *
- * @link           http://sunlightlabs.github.io/congress/index.html#parameters/filtering
+ * @link           https://sunlightlabs.github.io/congress/index.html#parameters/filtering
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress

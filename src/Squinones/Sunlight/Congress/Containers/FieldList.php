@@ -4,7 +4,7 @@
  *
  * Fields to include in the results of an API query.
  *
- * @link           http://sunlightlabs.github.io/congress/index.html#parameters/partial-responses
+ * @link           https://sunlightlabs.github.io/congress/index.html#parameters/partial-responses
  *
  * @author         Samantha Quinones <samantha@tembies.com>
  * @package        Sunlight\Congress

@@ -65,7 +65,7 @@ class ApiWrapper
     /**
      * A Sunlight\Congress\Filter object containing key=>value pairs of fields and values/expressions on which to
      * filter. For more information, see the Sunlight Foundation API documentation here:
-     * {@link http://sunlightlabs.github.io/congress/index.html}
+     * {@link https://sunlightlabs.github.io/congress/index.html}
      *
      * @var Filter
      */
@@ -88,7 +88,7 @@ class ApiWrapper
     /**
      * Returns an ApiResponse object. The optional 'query' parameter can contain plain text that will be used as a
      * search query as documented here:
-     * {@link http://sunlightlabs.github.io/congress/index.html#parameters/basic-search}
+     * {@link https://sunlightlabs.github.io/congress/index.html#parameters/basic-search}
      *
      * @param null|string $query
      *
